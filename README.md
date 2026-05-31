@@ -20,7 +20,6 @@ Una aplicación web de gestión de tareas moderna y responsive con sistema de au
 - **Font Awesome 6** - Iconos vectoriales
 - **LocalStorage API** - Almacenamiento en navegador
 
-     ```
 ### Inicio de Sesión
 - **Usuario:** `admin`
 - **Contraseña:** `1234`
@@ -34,7 +33,6 @@ Una aplicación web de gestión de tareas moderna y responsive con sistema de au
 
 ## Estructura del Proyecto
 
-```
 todo-app-pro/
 ├── index.html          # Página principal
 ├── style.css           # Estilos de la aplicación
