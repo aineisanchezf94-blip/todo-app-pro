@@ -19,6 +19,9 @@ li {
 }
 
 .done {
+    opacity: 0.6;
+}
+.done .tarea-texto {
     text-decoration: line-through;
     color: gray;
 }
@@ -32,6 +35,9 @@ body {
 }
 
 #taskInput {
+    border-color:#06B6D4;
+    box-shadow: 0 0 5px #06B6D4;
+    outline: none;
     border-radius: 25px;
     padding: 19px;
     font-size: 19px;
@@ -62,20 +68,27 @@ body {
 
 /* BOTONES */
 .menu-buttons {
+    justify-content: center;
     display: flex;
-    gap: 17px;
+    gap: 50px !important;
     flex-wrap: wrap;
+
 }
 
 .menu-btn {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     background: white;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    margin-left: 50px;
+    border: 2px solid #631ed9;
+    border-radius: 20px;
+    padding: 20px;
     color: #7C3AED;
     font-weight: bold;
     cursor: pointer;
+    margin-bottom: 20px;
+    width: 180px;
+    text-align: center;
 }
 .menu-btn:hover {
     background: #E5E7EB;
@@ -89,6 +102,7 @@ input {
     padding: 0;
 }
 .tarea-item {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     background: linear-gradient(135deg, #7C3AED, #06B6D4);
     color: white;
 
