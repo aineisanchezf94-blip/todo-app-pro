@@ -301,28 +301,3 @@ input {
     margin-top: 15px;
     font-weight: bold;
 }
-@media (max-width: 600px) {
-
-  h1 {
-    font-size: 24px;
-  }
-
-  .saldo-amount {
-    font-size: 18px;
-  }
-
-  .menu-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .menu-btn {
-    width: 100%;
-  }
-
-}
-.form-control {
-  width: 100%;
-}
-
