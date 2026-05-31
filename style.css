@@ -1,0 +1,145 @@
+body {
+    font-family: Arial;
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    margin-left: 15px;
+}
+
+button {
+    margin: 20px;
+}
+
+li {
+    margin: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.done {
+    text-decoration: line-through;
+    color: gray;
+}
+
+#error {
+    color: red;
+}
+body {
+    background: #F3F4F6;
+    font-family: Arial;
+}
+
+#taskInput {
+    border-radius: 25px;
+    padding: 19px;
+    font-size: 19px;
+    margin-bottom: 20px;
+    border: 2px solid #47444e;
+
+    background: white;
+    height: 60px;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #7C3AED, #06B6D4);
+}
+
+/* TARJETA */
+.saldo-card {
+    background: linear-gradient(135deg, #7C3AED, #06B6D4);
+    color: white;
+    border-radius: 16px;
+    padding: 26px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* BOTONES */
+.menu-buttons {
+    display: flex;
+    gap: 17px;
+    flex-wrap: wrap;
+}
+
+.menu-btn {
+    background: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 50px;
+    color: #7C3AED;
+    font-weight: bold;
+    cursor: pointer;
+}
+.menu-btn:hover {
+    background: #E5E7EB;
+}
+/* INPUT */
+input {
+    padding: 10px;
+}
+#taskList {
+    list-style: none;
+    padding: 0;
+}
+.tarea-item {
+    background: linear-gradient(135deg, #7C3AED, #06B6D4);
+    color: white;
+
+    border-radius: 20px;
+    padding: 18px 25px;
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tarea-botones {
+    display: flex;
+    gap: 16px;
+}
+
+.btn-icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-icon.check {
+    background: #22c55e;
+    color: white;
+}
+.btn-icon.delete {
+    background: #ef4444;
+    color: white;
+}
+.btn-agregar {
+    background: linear-gradient(135deg, #3B82F6, #2563EB);
+    color: white;
+
+    border: none;
+    border-radius: 20px;
+
+    padding: 10px;
+    width: 80px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+.btn-agregar:hover {
+    opacity: 0.9;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do App PRO</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap y iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- MENÚ -->
+<nav class="navbar navbar-dark">
+    <div class="container">
+        <span class="navbar-brand">
+            <i class="fas fa-list"></i> To-Do App
+        </span>
+    </div>
+</nav>
+
+<div class="container mt-5">
+
+    <!-- TARJETA -->
+    <div class="saldo-card">
+        <h5>Mis Tareas</h5>
+        <div class="saldo-amount">Organiza tu día</div>
+    </div>
+
+    <!-- FORMULARIO -->
+    <form id="taskForm" class="mb-3">
+        <input type="text" id="taskInput" class="form-control mb-3"  placeholder="Nueva tarea...">
+        <button type="submit" class="btn-agregar w-100">Agregar</button>
+        <p id="error"></p>
+    </form>
+
+    <!-- FILTROS -->
+    <div class="menu-buttons mb-3">
+        <button onclick="filtrar('todas')" class="menu-btn">Todas</button>
+        <button onclick="filtrar('pendientes')" class="menu-btn">Pendientes</button>
+        <button onclick="filtrar('completadas')" class="menu-btn">Completadas</button>
+    </div>
+
+    <!-- LISTA -->
+    <ul id="taskList" class="list-group"></ul>
+
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
