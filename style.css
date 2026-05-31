@@ -26,6 +26,12 @@ li {
     color: gray;
 }
 
+.container {
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 #error {
     color: red;
 }
@@ -88,7 +94,8 @@ body {
     border-radius: 16px;
     padding: 26px;
     text-align: center;
-    margin-bottom: 20px;
+    max-width: 100%;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -231,6 +238,7 @@ input {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 400px;
+    margin: auto;
 }
 
 .login-header {
@@ -262,6 +270,15 @@ input {
     box-shadow: 0 0 10px rgba(124, 58, 237, 0.3) !important;
 }
 
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+
 .btn-login {
     background: linear-gradient(135deg, #7C3AED, #06B6D4);
     color: white;
@@ -284,3 +301,28 @@ input {
     margin-top: 15px;
     font-weight: bold;
 }
+@media (max-width: 600px) {
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .saldo-amount {
+    font-size: 18px;
+  }
+
+  .menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu-btn {
+    width: 100%;
+  }
+
+}
+.form-control {
+  width: 100%;
+}
+
