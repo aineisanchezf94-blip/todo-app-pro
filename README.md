@@ -33,6 +33,7 @@ Una aplicación web de gestión de tareas moderna y responsive con sistema de au
 
 ## Estructura del Proyecto
 
+```
 todo-app-pro/
 ├── index.html          # Página principal
 ├── style.css           # Estilos de la aplicación
