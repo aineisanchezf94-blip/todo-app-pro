@@ -1,6 +1,7 @@
 let tasks = [];
 let filtroActual = "todas";
-``
+
+// Valida el texto ingresado por el usuario
 function validarTarea(texto) {
     try {
         if (!texto || texto.trim() === "") {
@@ -38,6 +39,7 @@ function cargarDatos() {
         tasks = JSON.parse(data);
     }
 }
+//Renderiza las tareas en pantalla
 function renderizarTareas() {
 
     const lista = document.getElementById("taskList");
@@ -85,7 +87,7 @@ function renderizarTareas() {
         lista.appendChild(li);
     });
 }
-
+// Marca una tarea como completada o pendiente
 function completarTarea(id) {
     tasks = tasks.map(t =>
         t.id === id ? { ...t, completada: !t.completada } : t
@@ -94,6 +96,7 @@ function completarTarea(id) {
     guardarDatos();
     renderizarTareas();
 }
+// Elimina una tarea según su id
 function eliminarTarea(id) {
     tasks = tasks.filter(t => t.id !== id);
 
@@ -110,9 +113,10 @@ document.getElementById("taskForm").addEventListener("submit", function(e) {
     const input = document.getElementById("taskInput");
     const error = document.getElementById("error");
 
-    const texto = input.value;
-
-    const errorMsg = validarTarea(texto);
+    const texto = input.value.trim();
+    //limpieza (seguridad basica)
+    const limpio = texto.replace(/</g, "").replace(/>/g, "");
+    const errorMsg = validarTarea(limpio);
 
     if (errorMsg) {
         error.textContent = errorMsg;
@@ -121,7 +125,7 @@ document.getElementById("taskForm").addEventListener("submit", function(e) {
 
     error.textContent = "";
 
-    const nueva = crearTarea(texto);
+    const nueva = crearTarea(limpio); //usar texto limpio
 
     tasks.push(nueva);
 
