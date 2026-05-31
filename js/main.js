@@ -1,5 +1,54 @@
+// VARIABLES DE AUTENTICACIÓN
+const CREDENCIALES_VALIDAS = {
+    usuario: "admin",
+    contrasena: "1234"
+};
+
+let usuarioActual = null;
 let tasks = [];
 let filtroActual = "todas";
+
+// FUNCIONES DE AUTENTICACIÓN
+function verificarSesion() {
+    const sesion = localStorage.getItem("usuarioSesion");
+    if (sesion) {
+        usuarioActual = sesion;
+        mostrarApp();
+    } else {
+        mostrarLogin();
+    }
+}
+
+function mostrarLogin() {
+    document.getElementById("loginScreen").style.display = "flex";
+    document.getElementById("navbar").style.display = "none";
+    document.getElementById("appContainer").style.display = "none";
+}
+
+function mostrarApp() {
+    document.getElementById("loginScreen").style.display = "none";
+    document.getElementById("navbar").style.display = "block";
+    document.getElementById("appContainer").style.display = "block";
+    document.getElementById("usuarioSpan").textContent = `Bienvenido, ${usuarioActual}`;
+}
+
+function iniciarSesion(usuario, contrasena) {
+    if (usuario === CREDENCIALES_VALIDAS.usuario && contrasena === CREDENCIALES_VALIDAS.contrasena) {
+        usuarioActual = usuario;
+        localStorage.setItem("usuarioSesion", usuario);
+        mostrarApp();
+        return true;
+    }
+    return false;
+}
+
+function cerrarSesion() {
+    usuarioActual = null;
+    localStorage.removeItem("usuarioSesion");
+    document.getElementById("loginForm").reset();
+    document.getElementById("loginError").textContent = "";
+    mostrarLogin();
+}
 
 // Valida el texto ingresado por el usuario
 function validarTarea(texto) {
@@ -21,11 +70,12 @@ function validarTarea(texto) {
         return "Error inesperado";
     }
 }
-function crearTarea(texto) {
+function crearTarea(texto, descripcion, fecha) {
     return {
         id: Date.now(),
         texto: texto,
-        detalle: "Sin detalles",
+        descripcion: descripcion || "Sin descripción",
+        fecha: fecha || "Sin fecha",
         completada: false
     };
 }
@@ -61,7 +111,13 @@ function renderizarTareas() {
         li.className = "tarea-item";
 
         li.innerHTML = `
-        <span class="tarea-texto">${tarea.texto}</span>
+        <div class="tarea-contenido">
+            <span class="tarea-texto">${tarea.texto}</span>
+            <div class="tarea-detalles">
+                <p class="tarea-descripcion">${tarea.descripcion}</p>
+                <p class="tarea-fecha"><i class="fas fa-calendar"></i> ${tarea.fecha}</p>
+            </div>
+        </div>
 
         <div class="tarea-botones">
             <button class="btn-icon check">
@@ -111,6 +167,8 @@ document.getElementById("taskForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
     const input = document.getElementById("taskInput");
+    const descripcion = document.getElementById("taskDescription");
+    const fecha = document.getElementById("taskDate");
     const error = document.getElementById("error");
 
     const texto = input.value.trim();
@@ -125,15 +183,40 @@ document.getElementById("taskForm").addEventListener("submit", function(e) {
 
     error.textContent = "";
 
-    const nueva = crearTarea(limpio); //usar texto limpio
+    const nueva = crearTarea(limpio, descripcion.value, fecha.value); //usar texto limpio
 
     tasks.push(nueva);
 
     guardarDatos();
 
     input.value = "";
+    descripcion.value = "";
+    fecha.value = "";
 
     renderizarTareas();
 });
+
+// EVENT LISTENERS DE AUTENTICACIÓN
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    const usuario = document.getElementById("username").value;
+    const contrasena = document.getElementById("password").value;
+    const errorElement = document.getElementById("loginError");
+    
+    if (iniciarSesion(usuario, contrasena)) {
+        cargarDatos();
+        renderizarTareas();
+    } else {
+        errorElement.textContent = "Usuario o contraseña incorrectos";
+    }
+});
+
+document.getElementById("logoutBtn").addEventListener("click", function() {
+    cerrarSesion();
+});
+
+// INICIALIZAR LA APLICACIÓN
+verificarSesion();
 cargarDatos();
 renderizarTareas();
