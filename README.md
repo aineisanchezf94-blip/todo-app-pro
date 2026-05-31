@@ -2,17 +2,16 @@
 
 Una aplicación web de gestión de tareas moderna y responsive con sistema de autenticación integrado. Gestiona tus tareas pendientes de forma eficiente con una interfaz intuitiva y atractiva.
 
-## ✨ Características
+## Características
 
-- 🔐 **Sistema de autenticación** - Login seguro con sesiones persistentes
-- ✅ **Gestión de tareas** - Crear, editar, marcar completadas y eliminar tareas
-- 🎨 **Interfaz moderna** - Diseño responsive con Bootstrap 5
-- 💾 **Almacenamiento local** - Sincronización automática con localStorage
-- 📱 **Mobile friendly** - Funciona perfectamente en dispositivos móviles
-- 🔔 **Notificaciones visuales** - Feedback instantáneo en acciones del usuario
-- 🌐 **Soporte multiidioma** - Interfaz en español
+- **Sistema de autenticación** - Login seguro con sesiones persistentes
+- **Gestión de tareas** - Crear, editar, marcar completadas y eliminar tareas
+- **Interfaz moderna** - Diseño responsive con Bootstrap 5
+- **Almacenamiento local** - Sincronización automática con localStorage
+- **Mobile friendly** - Funciona perfectamente en dispositivos móviles
+- **Notificaciones visuales** - Feedback instantáneo en acciones del usuario
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **HTML5** - Estructura semántica
 - **CSS3** - Estilos y animaciones
@@ -21,29 +20,7 @@ Una aplicación web de gestión de tareas moderna y responsive con sistema de au
 - **Font Awesome 6** - Iconos vectoriales
 - **LocalStorage API** - Almacenamiento en navegador
 
-## 📋 Requisitos
-
-- Navegador web moderno (Chrome, Firefox, Safari, Edge)
-- No requiere instalación de dependencias
-
-## 🚀 Instalación
-
-1. **Clona el repositorio**
-   ```bash
-   git clone https://github.com/tu-usuario/todo-app-pro.git
-   cd todo-app-pro
-   ```
-
-2. **Abre la aplicación**
-   - Opción 1: Abre el archivo `index.html` directamente en tu navegador
-   - Opción 2: Usa un servidor local:
-     ```bash
-     python -m http.server 8000
-     # Luego accede a http://localhost:8000
      ```
-
-## 📖 Uso
-
 ### Inicio de Sesión
 - **Usuario:** `admin`
 - **Contraseña:** `1234`
@@ -55,7 +32,7 @@ Una aplicación web de gestión de tareas moderna y responsive con sistema de au
 4. **Filtrar tareas** - Usa los filtros disponibles (Todas, Pendientes, Completadas)
 5. **Cerrar sesión** - Haz clic en el botón "Cerrar Sesión"
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 todo-app-pro/
@@ -64,10 +41,9 @@ todo-app-pro/
 ├── js/
 │   └── main.js         # Lógica principal
 ├── README.md           # Este archivo
-└── LICENSE             # Licencia del proyecto
 ```
 
-## 🔑 Características Técnicas
+## Características Técnicas
 
 ### Autenticación
 - Validación de credenciales
@@ -84,7 +60,7 @@ todo-app-pro/
 - Protección de rutas
 - Limpieza de sesiones
 
-## 🎯 Mejoras Futuras
+## Mejoras Futuras
 
 - [ ] Backend con autenticación real
 - [ ] Base de datos para persistencia
@@ -93,18 +69,4 @@ todo-app-pro/
 - [ ] Exportación de tareas
 - [ ] Recordatorios y notificaciones
 
-## 📝 Licencia
 
-Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
-
-## 👨‍💻 Autor
-
-Desarrollado como una aplicación educativa para practicar JavaScript Vanilla y desarrollo web frontend.
-
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Para cambios significativos, abre un issue primero para discutir los cambios propuestos.
-
----
-
-⭐ Si este proyecto te fue útil, considérate dejar una estrella en GitHub.
